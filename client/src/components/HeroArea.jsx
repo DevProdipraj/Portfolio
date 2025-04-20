@@ -82,7 +82,7 @@ const HeroArea = () => {
             <input type="submit" value="Download Resume" />
           </div>
         </div>
-        <p className="text-sm text-gray-400 pt-2 text-center sm:text-left mt-2">
+        <p className="text-sm text-gray-400 pt-4 text-center sm:text-left mt-2">
           Available for freelance projects and full-time opportunities
         </p>
       </div>

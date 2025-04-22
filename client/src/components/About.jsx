@@ -70,8 +70,8 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-semibold text-white">Development</h3>
               </div>
-              <ul className="space-y-3 text-gray-300">
-                {['React', 'Next.js', 'TypeScript', 'Node.js', 'Express', 'MongoDB'].map((skill, idx) => (
+              <ul className="space-y-3 text-gray-300 lg:mt-12">
+                {['Javascript','React', 'Next.js', 'redux', 'Node.js', 'Express.js', 'MongoDB'].map((skill, idx) => (
                   <li key={idx} className="flex items-center gap-3">
                     <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
                     <span>{skill}</span>
@@ -110,8 +110,8 @@ const About = () => {
                 </div>
                 <h3 className="text-2xl font-semibold text-white">Design & Tools</h3>
               </div>
-              <ul className="space-y-3 text-gray-300">
-                {['Figma', 'Tailwind CSS', 'Framer Motion', 'GSAP', 'Webpack', 'Docker'].map((tool, idx) => (
+              <ul className="space-y-3 text-gray-300 lg:mt-12">
+                {['Figma (Basic)', 'Html - 5', 'CSS - 3', "Bootstrap - 5", 'Tailwind CSS', 'GSAP',].map((tool, idx) => (
                   <li key={idx} className="flex items-center gap-3">
                     <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
                     <span>{tool}</span>
@@ -145,15 +145,15 @@ const About = () => {
               <div className="space-y-4">
                 <div className="p-4 bg-white/5 rounded-lg border border-white/5">
                   <h4 className="text-lg font-medium text-white">Full-Stack Developer</h4>
-                  <p className="text-sm text-gray-400 mt-1">4+ years experience</p>
+                  <p className="text-sm text-gray-400 mt-1">1+ years experience</p>
                   <p className="text-gray-300 mt-2">
                     Building scalable web applications with modern technologies
                   </p>
                 </div>
                 <div className="p-4 bg-white/5 rounded-lg border border-white/5">
-                  <h4 className="text-lg font-medium text-white">E-commerce Specialist</h4>
-                  <p className="text-sm text-gray-400 mt-1">6 months experience</p>
-                  <p className="text-gray-300 mt-2">Developed and optimized e-commerce platforms</p>
+                  <h4 className="text-lg font-medium text-white">Frontend development</h4>
+                  <p className="text-sm text-gray-400 mt-1">3+ years experience</p>
+                  <p className="text-gray-300 mt-2">Frontend Developer with Real-World Experience in Building Responsive, Scalable Interfaces.</p>
                 </div>
               </div>
             </div>
@@ -161,7 +161,7 @@ const About = () => {
 
           <div className="about-item text-center">
             <a
-              href=" "
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl font-medium text-white hover:shadow-lg hover:shadow-purple-500/30 transition-all group"

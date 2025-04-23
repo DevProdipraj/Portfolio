@@ -2,8 +2,11 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <div className="bg-gradient-to-br from-[#0a0e1a] via-[#0f172a] to-[#1a1030]">
-      <div className="relative w-full pt-28 xl:pb-28 overflow-hidden container ">
+    <div
+      id="contact"
+      className="bg-gradient-to-br from-[#0a0e1a] via-[#0f172a] to-[#1a1030]"
+    >
+      <div className="relative w-full pt-14 lg:pt-28 xl:pb-28 overflow-hidden container ">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/3 left-1/4 w-80 h-80 rounded-full bg-purple-900/20 blur-[100px] float-element"></div>
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-blue-900/20 blur-[120px] float-element"></div>
@@ -13,19 +16,39 @@ const Contact = () => {
           <div className="absolute top-40 left-1/3 w-2 h-2 rounded-full bg-pink-400/50 float-element"></div>
         </div>
 
-        <div className="container mx-auto px-6 max-w-6xl relative z-10 pb-[80px]">
-          <h1 className="contact-title text-6xl md:text-8xl font-bold tracking-tighter mb-16 text-center">
-            {[..."CONTACT"].map((char, i) => (
-              <span
-                key={i}
-                className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-400"
-              >
-                {char}
-              </span>
-            ))}
-          </h1>
+        <div className="container mx-auto px-0   md:px-6 max-w-6xl relative z-10  pb-2 lg:pb-[80px]">
+          {/* Section title  */}
+          <div className="mb-6 md:mb-20 overflow-hidden">
+            <h1
+              className="section-title text-4xl md:text-8xl font-bold tracking-tight text-center"
+              style={{
+                translate: "none",
+                rotate: "none",
+                scale: "none",
+                transform: "translate(0px, 0px)",
+                opacity: 1,
+              }}
+            >
+              {"CONTACT".split("").map((letter, index) => (
+                <span
+                  key={index}
+                  className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400"
+                  style={{
+                    translate: "none",
+                    rotate: "none",
+                    scale: "none",
+                    transform: "translate(0px, 0px)",
+                    opacity: 1,
+                  }}
+                >
+                  {letter}
+                </span>
+              ))}
+            </h1>
+            <div className="title-divider mx-auto w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mt-6"></div>
+          </div>
 
-          <div className="contact-container grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div className="contact-container grid grid-cols-1 lg:grid-cols-2  gap-12">
             <form className="contact-form bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-lg p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300">
               <div className="space-y-6">
                 <div className="relative">
@@ -61,7 +84,7 @@ const Contact = () => {
                 </div>
 
                 <div className="relative">
-                  <div className="block px-4 py-3 w-full bg-white/5 rounded-lg border border-white/10 text-white cursor-pointer flex items-center justify-between">
+                  <div className="  px-4 py-3 w-full bg-white/5 rounded-lg border border-white/10 text-white cursor-pointer flex items-center justify-between">
                     <span className="text-gray-400">Select a subject</span>
                     <svg
                       stroke="currentColor"
@@ -227,7 +250,15 @@ const Contact = () => {
 
         <div className="mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
-            © 2025 <a href="https://www.linkedin.com/in/prodip-raj-a50818282/" target="_blank" className="text-white">Prodip.Dev</a> All rights reserved.
+            © 2025{" "}
+            <a
+              href="https://www.linkedin.com/in/prodip-raj-a50818282/"
+              target="_blank"
+              className="text-white"
+            >
+              Prodip.Dev
+            </a>{" "}
+            All rights reserved.
           </div>
           <div className="flex items-center gap-6">
             <a

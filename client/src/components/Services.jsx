@@ -1,12 +1,47 @@
-
-
-import { FaCode, FaPalette, FaMobileAlt, FaServer, FaLayerGroup, FaUserTie } from 'react-icons/fa';
+import {
+  FaCode,
+  FaPalette,
+  FaMobileAlt,
+  FaServer,
+  FaLayerGroup,
+  FaUserTie,
+} from "react-icons/fa";
 
 const Services = () => {
   return (
     <div className="bg-[#0f172a]    py-12 px-4 sm:px-6 lg:px-8">
+       {/* services title  */}
+       <div className="mb-20 overflow-hidden">
+          <h1
+            className="section-title text-6xl md:text-8xl font-bold tracking-tight text-center"
+            style={{
+              translate: "none",
+              rotate: "none",
+              scale: "none",
+              transform: "translate(0px, 0px)",
+              opacity: 1,
+            }}
+          >
+            {"SERVICES".split("").map((letter, index) => (
+              <span
+                key={index}
+                className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400"
+                style={{
+                  translate: "none",
+                  rotate: "none",
+                  scale: "none",
+                  transform: "translate(0px, 0px)",
+                  opacity: 1,
+                }}
+              >
+                {letter}
+              </span>
+            ))}
+          </h1>
+          <div className="title-divider mx-auto w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mt-6"></div>
+        </div>
       <div className="container lg:px-26 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        
+       
         {/* Web Development */}
         <div className="bg-gradient-to-br from-[#1e1e9e] to-[#0f172a] rounded-2xl px-8 py-10 border border-white/10 text-white shadow-md">
           <div className="bg-purple-600 p-3 inline-block rounded-lg mb-4">
@@ -14,7 +49,8 @@ const Services = () => {
           </div>
           <h3 className="text-xl font-bold mb-2">Web Development</h3>
           <p className="text-sm text-gray-300">
-            Custom, responsive websites built with modern technologies like Next.js, React, and TypeScript.
+            Custom, responsive websites built with modern technologies like
+            Next.js, React, and TypeScript.
           </p>
         </div>
 
@@ -25,7 +61,8 @@ const Services = () => {
           </div>
           <h3 className="text-xl font-bold mb-2">UI/UX Design</h3>
           <p className="text-sm text-gray-300">
-            Beautiful, intuitive interfaces designed with user experience as the top priority.
+            Beautiful, intuitive interfaces designed with user experience as the
+            top priority.
           </p>
         </div>
 
@@ -36,7 +73,8 @@ const Services = () => {
           </div>
           <h3 className="text-xl font-bold mb-2">Mobile Apps</h3>
           <p className="text-sm text-gray-300">
-            Cross-platform mobile applications that work seamlessly on iOS and Android.
+            Cross-platform mobile applications that work seamlessly on iOS and
+            Android.
           </p>
         </div>
 
@@ -69,10 +107,10 @@ const Services = () => {
           </div>
           <h3 className="text-xl font-bold mb-2">Consulting</h3>
           <p className="text-sm text-gray-300">
-            Expert advice on architecture, performance optimization, and best practices.
+            Expert advice on architecture, performance optimization, and best
+            practices.
           </p>
         </div>
-
       </div>
     </div>
   );

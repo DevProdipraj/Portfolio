@@ -1,18 +1,21 @@
+
+
 import React from "react";
 import { IoBagAddOutline } from "react-icons/io5";
 import { LuDownload } from "react-icons/lu";
 
 const HeroArea = () => {
   return (
-    <div className="container  pb-10 lg:pb-32 flex items-top justify-between lg:px-38 gap-x-2 lg:mt-32 pt-32">
-      <div className="w-3/5">
-        <h3 className="text-lg font-medium text-purple-400">
+    <div className="container px-4 sm:px-6 pb-10 lg:pb-32 lg:px-38 flex flex-col-reverse   lg:flex-row items-center lg:items-start justify-between gap-y-12 lg:gap-x-10  py-22 md:pt-52">
+      {/* Left Text Section */}
+      <div className="w-full lg:w-3/5 text-center lg:text-left">
+        <h3 className="text-base sm:text-lg font-medium text-purple-400">
           Web Developer (MERN) || Bridging Frontend Beauty with Backend Power
         </h3>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent my-6">
-          Hi, I'm Prodip <br /> Rajbongshi
+        <h1 className="text-2xl sm:text-4xl md:text-5xl xl:text-6xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent my-6 leading-tight">
+          Hi, I'm Prodip <br className="hidden sm:block" /> Rajbongshi
         </h1>
-        <p className="text-base sm:text-lg md:text-xl text-gray-300 leading-tight w-[80%]">
+        <p className="text-sm sm:text-base md:text-lg text-gray-300 leading-relaxed mx-auto lg:mx-0 max-w-[90%] sm:max-w-full">
           I specialize in building{" "}
           <span className="text-purple-400 font-bold">
             high-performance web applications
@@ -22,7 +25,7 @@ const HeroArea = () => {
           technologies and best development practices...
         </p>
 
-        <div className="flex flex-wrap gap-3 justify-center lg:justify-start my-10 w-[80%]">
+        <div className="flex flex-wrap gap-3 justify-center lg:justify-start my-10">
           {[
             "Next.js",
             "Javascript",
@@ -44,7 +47,7 @@ const HeroArea = () => {
           ))}
         </div>
 
-        <div className="flex items-center justify-start gap-x-6">
+        <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-x-6">
           <button className="flex items-center justify-center gap-x-2 px-6 py-3.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/30 transition-all text-white">
             <IoBagAddOutline />
             <span>Hire me</span>
@@ -55,17 +58,18 @@ const HeroArea = () => {
           </button>
         </div>
 
-        <p className="text-sm text-gray-400 pt-4 text-center sm:text-left mt-2">
+        <p className="text-sm text-gray-400 pt-4 mt-2 text-center lg:text-left">
           Available for freelance projects and full-time opportunities
         </p>
       </div>
 
-      <div className="w-2/5">
+      {/* Right Image Section */}
+      <div className="w-full sm:w-4/5 lg:w-2/5 max-w-md mx-auto lg:mx-0">
         <div className="relative flex items-center justify-center bg-[#1C2232] rounded-xl cursor-pointer hover:shadow-2xl transition-all duration-300">
           <img
             src="/ProdipRajbongshi.png"
             alt="Profile Picture"
-            className="w-full object-cover"
+            className="w-full object-cover rounded-xl"
             style={{
               WebkitMaskImage:
                 "linear-gradient(to bottom, black 40%, transparent 100%)",

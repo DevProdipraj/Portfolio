@@ -71,7 +71,7 @@ const About = () => {
                 <h3 className="text-2xl font-semibold text-white">Development</h3>
               </div>
               <ul className="space-y-3 text-gray-300 lg:mt-12">
-                {['Javascript','React', 'Next.js', 'redux', 'Node.js', 'Express.js', 'MongoDB'].map((skill, idx) => (
+                {['Javascript','React', 'Next.js', 'Redux', "Redux Toolkit", 'Node.js', 'Express.js', 'MongoDB'].map((skill, idx) => (
                   <li key={idx} className="flex items-center gap-3">
                     <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span>
                     <span>{skill}</span>
@@ -161,7 +161,7 @@ const About = () => {
 
           <div className="about-item text-center">
             <a
-              href="#"
+              href="https://drive.google.com/file/d/1tHRJDr5mr2SrHg2MnoBFiv7uMkQitTOf/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl font-medium text-white hover:shadow-lg hover:shadow-purple-500/30 transition-all group"

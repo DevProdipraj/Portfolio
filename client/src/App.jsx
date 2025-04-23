@@ -6,14 +6,18 @@ import Work from './components/Work'
 import Services from './components/Services'
 import WorkProcess from './components/WorkProcess'
 import Contact from './components/Contact'
+import BottomBar from './components/BottomBar'
+// import StartProjectForm from './components/HiremeForm'
 
 const App = () => {
   return (
-    <div className='  bg-gradient-to-br from-[#0a0e1a] via-[#0f172a] to-[#1a1030]'>
+    <div className='  '>
      <Navbar />
+     <BottomBar/>
      <HeroArea />
      <About />
      <Work />
+     {/* <StartProjectForm /> */}
      <Services />
      < WorkProcess/>
      <Contact/>

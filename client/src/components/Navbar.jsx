@@ -30,13 +30,17 @@ const Navbar = () => {
   return (
     <div
       className={`w-full fixed top-0 z-50 transition-transform duration-500 ease-in-out   backdrop-blur-lg ${
-        showNavbar ? "translate-y-0" : "-translate-y-full"
+        showNavbar ? "lg:translate-y-8" : "-translate-y-full"
       }`}
     >
-      <div className="pt-6 h-[15vh] bg-[#0a0a1a]/90 backdrop-blur-lg mx-auto max-w-[1280px] px-4 sm:px-6 rounded-xl flex items-center justify-between border border-white/10">
+      <div className="   bg-[#0a0a1a]/90 backdrop-blur-lg mx-auto max-w-[1280px] px-4 sm:px-6 rounded-xl flex items-center justify-between border border-white/10">
         {/* Logo */}
         <div>
-          <img className="h-2/3" src="./Logo.svg" alt="Brand Icon" />
+          <img
+            className=" w-2/3 md:w-3/3  h-2/3"
+            src="./Logo.svg"
+            alt="Brand Icon"
+          />
         </div>
 
         {/* Desktop Menu */}
@@ -54,18 +58,20 @@ const Navbar = () => {
             <a href="#contact" className="cursor-pointer text-[#2563eb]">
               Contact
             </a>
-            <input
-              className="px-5 py-2 lg:px-6 lg:py-2.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-lg font-medium text-white hover:shadow-lg hover:shadow-purple-500/40 transition-all cursor-pointer"
-              type="button"
-              value="Say Hello 👋"
-            />
+            <a href="#contact">
+              <input
+                className="px-5 py-2 lg:px-6 lg:py-2.5 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-lg font-medium text-white hover:shadow-lg hover:shadow-purple-500/40 transition-all cursor-pointer"
+                type="button"
+                value="Say Hello 👋"
+              />
+            </a>
           </ul>
         </div>
 
         {/* Hamburger Icon */}
         <div className="md:hidden text-white text-2xl cursor-pointer">
           {isOpen ? (
-            <FiX onClick={() => setIsOpen(false)} />
+            <FiX className="text-2xl" onClick={() => setIsOpen(false)} />
           ) : (
             <FiMenu onClick={() => setIsOpen(true)} />
           )}
@@ -108,12 +114,16 @@ const Navbar = () => {
           className="block text-[#2563eb]"
         >
           Contact
+        </a>  
+        <a href="#contact"
+        onClick={() => setIsOpen(false)}
+        >
+          <input
+            className="px-5 py-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-lg font-medium text-white hover:shadow-lg hover:shadow-purple-500/40 transition-all cursor-pointer"
+            type="button"
+            value="Say Hello 👋"
+          />
         </a>
-        <input
-          className="px-5 py-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-lg font-medium text-white hover:shadow-lg hover:shadow-purple-500/40 transition-all cursor-pointer"
-          type="button"
-          value="Say Hello 👋"
-        />
       </div>
     </div>
   );

@@ -1,14 +1,12 @@
-
-
 import { FaCode, FaPalette, FaMobileAlt, FaServer, FaLayerGroup, FaUserTie } from 'react-icons/fa';
 
 const Services = () => {
   return (
-    <div className="bg-[#0f172a]    py-12 px-4 sm:px-6 lg:px-8">
-      <div className="container lg:px-26 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="bg-[#0f172a] min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         
         {/* Web Development */}
-        <div className="bg-gradient-to-br from-[#1e1e9e] to-[#0f172a] rounded-2xl px-8 py-10 border border-white/10 text-white shadow-md">
+        <div className="bg-gradient-to-br from-[#1e1e9e] to-[#0f172a] rounded-2xl p-6 text-white shadow-md">
           <div className="bg-purple-600 p-3 inline-block rounded-lg mb-4">
             <FaCode className="text-2xl" />
           </div>
@@ -19,7 +17,7 @@ const Services = () => {
         </div>
 
         {/* UI/UX Design */}
-        <div className="bg-gradient-to-br from-[#0f172a] to-[#113b76] rounded-2xl px-8 py-10 border border-white/10 text-white shadow-md">
+        <div className="bg-gradient-to-br from-[#0f172a] to-[#113b76] rounded-2xl p-6 text-white shadow-md">
           <div className="bg-cyan-500 p-3 inline-block rounded-lg mb-4">
             <FaPalette className="text-2xl" />
           </div>
@@ -30,7 +28,7 @@ const Services = () => {
         </div>
 
         {/* Mobile Apps */}
-        <div className="bg-gradient-to-br from-[#0f172a] to-[#0c3f3c] rounded-2xl px-8 py-10 border border-white/10 text-white shadow-md">
+        <div className="bg-gradient-to-br from-[#0f172a] to-[#0c3f3c] rounded-2xl p-6 text-white shadow-md">
           <div className="bg-green-500 p-3 inline-block rounded-lg mb-4">
             <FaMobileAlt className="text-2xl" />
           </div>
@@ -41,7 +39,7 @@ const Services = () => {
         </div>
 
         {/* Backend Services */}
-        <div className="bg-gradient-to-br from-[#2d0e0e] to-[#0f172a] rounded-2xl px-8 py-10 border border-white/10 text-white shadow-md">
+        <div className="bg-gradient-to-br from-[#2d0e0e] to-[#0f172a] rounded-2xl p-6 text-white shadow-md">
           <div className="bg-orange-500 p-3 inline-block rounded-lg mb-4">
             <FaServer className="text-2xl" />
           </div>
@@ -52,7 +50,7 @@ const Services = () => {
         </div>
 
         {/* Full-Stack Solutions */}
-        <div className="bg-gradient-to-br from-[#2e0c1b] to-[#0f172a] rounded-2xl px-8 py-10 border border-white/10 text-white shadow-md">
+        <div className="bg-gradient-to-br from-[#2e0c1b] to-[#0f172a] rounded-2xl p-6 text-white shadow-md">
           <div className="bg-pink-500 p-3 inline-block rounded-lg mb-4">
             <FaLayerGroup className="text-2xl" />
           </div>
@@ -63,7 +61,7 @@ const Services = () => {
         </div>
 
         {/* Consulting */}
-        <div className="bg-gradient-to-br from-[#3a0c59] to-[#0f172a] rounded-2xl px-8 py-10 border border-white/10 text-white shadow-md">
+        <div className="bg-gradient-to-br from-[#3a0c59] to-[#0f172a] rounded-2xl p-6 text-white shadow-md">
           <div className="bg-purple-500 p-3 inline-block rounded-lg mb-4">
             <FaUserTie className="text-2xl" />
           </div>

@@ -1,131 +1,105 @@
-import React from "react";
+import React, { useState } from "react";
+import { FaGithub } from "react-icons/fa";
+import { SiLinkedin } from "react-icons/si";
+import { IoBagAddOutline } from "react-icons/io5";
+import Modal from "./Modal";
 
 const BottomBar = () => {
+  const [hiddenBar, setHiddenBar] = useState(false); 
+
   return (
-    <div className="fixed bottom-[40px] w-full px-4 z-20">
-      <div className="w-full max-w-[1280px] mx-auto">
-        <div className="grid grid-cols-12 gap-0 rounded-xl overflow-hidden shadow-2xl">
-          <div className="col-span-9 bg-[#0a0a1a] p-4 flex items-center justify-between">
-            <div className="flex-1 flex items-center">
-              {/* Desktop Menu */}
-              <div className="hidden md:flex">
-                
-                <ul className="flex items-center text-white gap-x-6">
+    <>
+      {hiddenBar && (
+        <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-30">
+          <button
+            onClick={() => setHiddenBar(false)}
+            className="px-4 py-2 bg-gradient-to-r from-pink-600 to-purple-600 text-white rounded-full shadow-lg cursor-pointer"
+          >
+            Show Bar
+          </button>
+        </div>
+      )}
+
+      {!hiddenBar && (
+        <div className="lg:block fixed bottom-10 w-full px-4 z-20">
+          <div className="w-full max-w-[1280px] mx-auto">
+            <div className="rounded-xl overflow-hidden shadow-2xl text-center bg-gradient-to-br from-[#0a0e1a] via-[#0f172a] to-[#1e1030] p-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div className="flex flex-col md:flex-row md:items-center flex-1 gap-4">
                 <div>
                   <img
-                    className=" w-2/3 md:w-3/3  h-2/3"
+                    className="md:w-52 h-auto mx-auto md:mx-0"
                     src="./Logo.svg"
                     alt="Brand Icon"
                   />
                 </div>
-                  <a href="#work" className="cursor-pointer text-[#2563eb]">
+                <ul className="flex justify-center md:justify-start items-center gap-x-6 text-white lg:ms-5">
+                  <a href="#work" className="cursor-pointer">
                     Work
                   </a>
-                  <a href="#service" className="cursor-pointer text-[#2563eb]">
+                  <a href="#service" className="cursor-pointer">
                     Service
                   </a>
-                  <a href="#about" className="cursor-pointer text-[#2563eb]">
+                  <a href="#about" className="cursor-pointer">
                     About
                   </a>
                 </ul>
+                <div className="flex justify-center md:justify-start gap-4">
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://github.com/DevProdipraj"
+                    className="px-4 py-3 bg-white/5 backdrop-blur-md rounded-full border border-white/10 hover:border-purple-400/30 transition-all"
+                  >
+                    <div className="flex items-center gap-2">
+                      <div className="text-xl text-purple-400">
+                        <FaGithub />
+                      </div>
+                      <div className="text-sm text-white/80">GitHub</div>
+                    </div>
+                  </a>
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="https://linkedin.com"
+                    className="px-4 py-3 bg-white/5 backdrop-blur-md rounded-full border border-white/10 hover:border-purple-400/30 transition-all"
+                  >
+                    <div className="flex items-center gap-2">
+                      <div className="text-xl text-blue-300">
+                        <SiLinkedin />
+                      </div>
+                      <div className="text-sm text-white/80">LinkedIn</div>
+                    </div>
+                  </a>
+                </div>
               </div>
-              <div className="flex gap-4">
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://github.com/ShariarSheikh"
-                  className="cursor-pointer px-4 py-3 bg-white/5 backdrop-blur-md rounded-full border border-white/10 hover:border-purple-400/30 transition-all"
+
+              <div className="flex justify-center md:justify-end gap-2">
+              <Modal />
+                <button
+                  onClick={() => setHiddenBar(true)}
+                  className="text-gray-400 hover:text-white transition-all p-2 cursor-pointer"
                 >
-                  <div className="flex items-center gap-2">
-                    <div className="text-xl text-purple-400">
-                      <svg
-                        stroke="currentColor"
-                        fill="none"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        height="1em"
-                        width="1em"
-                      >
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                      </svg>
-                    </div>
-                    <div className="text-sm text-white/80">GitHub</div>
-                  </div>
-                </a>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://linkedin.com/in/sheikhshariar"
-                  className="cursor-pointer px-4 py-3 bg-white/5 backdrop-blur-md rounded-full border border-white/10 hover:border-purple-400/30 transition-all"
-                >
-                  <div className="flex items-center gap-2">
-                    <div className="text-xl text-blue-300">
-                      <svg
-                        stroke="currentColor"
-                        fill="none"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        height="1em"
-                        width="1em"
-                      >
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect x="2" y="9" width="4" height="12"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                      </svg>
-                    </div>
-                    <div className="text-sm text-white/80">LinkedIn</div>
-                  </div>
-                </a>
+                  <svg
+                    stroke="currentColor"
+                    fill="none"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-xl"
+                    height="1em"
+                    width="1em"
+                  >
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                  </svg>
+                </button>
               </div>
             </div>
-
-            <div className="flex gap-2">
-              <a
-                href="#hire-me"
-                className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-pink-600 to-purple-600 rounded-lg text-white font-medium transition-all"
-              >
-                <svg
-                  stroke="currentColor"
-                  fill="none"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-lg"
-                  height="1em"
-                  width="1em"
-                >
-                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-                </svg>
-                <span>Hire Me</span>
-              </a>
-            </div>
-
-            <button className="text-gray-400 hover:text-white transition-all p-2">
-              <svg
-                stroke="currentColor"
-                fill="none"
-                strokeWidth="2"
-                viewBox="0 0 24 24"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-xl"
-                height="1em"
-                width="1em"
-              >
-                <line x1="18" y1="6" x2="6" y2="18"></line>
-                <line x1="6" y1="6" x2="18" y2="18"></line>
-              </svg>
-            </button>
           </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 };
 

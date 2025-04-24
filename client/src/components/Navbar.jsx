@@ -36,11 +36,14 @@ const Navbar = () => {
       <div className="   bg-[#0a0a1a]/90 backdrop-blur-lg mx-auto max-w-[1280px] px-4 sm:px-6 rounded-xl flex items-center justify-between border border-white/10">
         {/* Logo */}
         <div>
+          <a href="#">
           <img
             className=" w-2/3 md:w-3/3  h-2/3"
             src="./Logo.svg"
             alt="Brand Icon"
           />
+          </a>
+         
         </div>
 
         {/* Desktop Menu */}

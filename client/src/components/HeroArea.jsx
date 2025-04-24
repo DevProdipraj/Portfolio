@@ -1,12 +1,11 @@
-
-
 import React from "react";
-import { IoBagAddOutline } from "react-icons/io5";
 import { LuDownload } from "react-icons/lu";
+import Modal from "./Modal";
 
 const HeroArea = () => {
+
   return (
-    <div className="container px-4 sm:px-6 pb-10 lg:pb-32 lg:px-38 flex flex-col-reverse   lg:flex-row items-center lg:items-start justify-between gap-y-12 lg:gap-x-10  py-22 md:pt-52">
+    <div className="container px-4 sm:px-6 pb-10 lg:pb-32 lg:px-38 flex flex-col-reverse lg:flex-row items-center lg:items-start justify-between gap-y-12 lg:gap-x-10 py-22 md:pt-52">
       {/* Left Text Section */}
       <div className="w-full lg:w-3/5 text-center lg:text-left">
         <h3 className="text-base sm:text-lg font-medium text-purple-400">
@@ -48,14 +47,18 @@ const HeroArea = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-x-6">
-          <button className="flex items-center justify-center gap-x-2 px-6 py-3.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/30 transition-all text-white">
-            <IoBagAddOutline />
-            <span>Hire me</span>
-          </button>
-          <button className="flex items-center gap-x-2 px-6 py-3.5 border border-white/20 text-gray-300 rounded-lg font-medium hover:bg-white/10 transition-all">
+
+
+          <Modal />
+          <a
+            href="https://drive.google.com/file/d/1tHRJDr5mr2SrHg2MnoBFiv7uMkQitTOf/view"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-x-2 px-6 py-3.5 border border-white/20 text-gray-300 rounded-lg font-medium hover:bg-white/10 transition-all"
+          >
             <LuDownload />
             <span>Download Resume</span>
-          </button>
+          </a>
         </div>
 
         <p className="text-sm text-gray-400 pt-4 mt-2 text-center lg:text-left">
@@ -81,7 +84,6 @@ const HeroArea = () => {
               maskSize: "100% 100%",
             }}
           />
-
           <div className="absolute z-20 bottom-[10%] flex items-center justify-center w-full fade-delay">
             <div className="px-6 py-3 bg-black/50 backdrop-blur-md rounded-full border border-white/20 text-white font-semibold hover:bg-black/70 cursor-pointer">
               <span>3+ Years Experience</span>

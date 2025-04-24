@@ -12,7 +12,7 @@ const Modal = () => {
     <div className="  flex items-center justify-center  text-white  ">
       <button
         onClick={openModal}
-        className="flex items-center justify-center cursor-pointer gap-x-2 px-6 py-3.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/30 transition-all text-white"
+        className="flex items-center justify-center cursor-pointer gap-x-2 px-3 py-2 md:px-6 md:py-3.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/30 transition-all text-white"
       >
         <IoBagAddOutline />
         <span>Hire me</span>

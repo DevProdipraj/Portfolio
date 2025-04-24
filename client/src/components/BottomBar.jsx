@@ -5,7 +5,7 @@ import { IoBagAddOutline } from "react-icons/io5";
 import Modal from "./Modal";
 
 const BottomBar = () => {
-  const [hiddenBar, setHiddenBar] = useState(false); 
+  const [hiddenBar, setHiddenBar] = useState(false);
 
   return (
     <>
@@ -25,24 +25,26 @@ const BottomBar = () => {
           <div className="w-full max-w-[1280px] mx-auto">
             <div className="rounded-xl overflow-hidden shadow-2xl text-center bg-gradient-to-br from-[#0a0e1a] via-[#0f172a] to-[#1e1030] p-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <div className="flex flex-col md:flex-row md:items-center flex-1 gap-4">
-                <div>
+                <div className="hidden lg:block">
                   <img
                     className="md:w-52 h-auto mx-auto md:mx-0"
                     src="./Logo.svg"
                     alt="Brand Icon"
                   />
                 </div>
-                <ul className="flex justify-center md:justify-start items-center gap-x-6 text-white lg:ms-5">
-                  <a href="#work" className="cursor-pointer">
-                    Work
-                  </a>
-                  <a href="#service" className="cursor-pointer">
-                    Service
-                  </a>
-                  <a href="#about" className="cursor-pointer">
-                    About
-                  </a>
-                </ul>
+                <div className="hidden md:block">
+                  <ul className="flex justify-center md:justify-start items-center gap-x-6 text-white lg:ms-5 ">
+                    <a href="#work" className="cursor-pointer">
+                      Work
+                    </a>
+                    <a href="#service" className="cursor-pointer">
+                      Service
+                    </a>
+                    <a href="#about" className="cursor-pointer">
+                      About
+                    </a>
+                  </ul>
+                </div>
                 <div className="flex justify-center md:justify-start gap-4">
                   <a
                     target="_blank"
@@ -74,7 +76,7 @@ const BottomBar = () => {
               </div>
 
               <div className="flex justify-center md:justify-end gap-2">
-              <Modal />
+                <Modal />
                 <button
                   onClick={() => setHiddenBar(true)}
                   className="text-gray-400 hover:text-white transition-all p-2 cursor-pointer"

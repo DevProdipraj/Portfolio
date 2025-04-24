@@ -7,9 +7,10 @@ const Modal = () => {
   <form class="space-y-6">
 
   <div class="space-y-1">
-    <label class="block text-sm font-medium text-white/60">Your Name <span class="text-red-400">*</span></label>
+    <label class="block text-start text-sm font-medium text-white/60">Your Name <span class="text-red-400">*</span></label>
     <div class="relative">
       <input 
+      required
         placeholder="Name" 
         name="name" 
         class="w-full px-4 py-3 bg-white/5 rounded-lg border border-white/10 text-white/90 placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/20 transition-all duration-200 hover:border-white/20"
@@ -23,9 +24,10 @@ const Modal = () => {
 
 
   <div class="space-y-1">
-    <label class="block text-sm font-medium text-white/60">Your Email <span class="text-red-400">*</span></label>
+    <label class="block text-start text-sm font-medium text-white/60">Your Email <span class="text-red-400">*</span></label>
     <div class="relative">
       <input 
+      required
         type="email" 
         name="email" 
         placeholder="Email" 
@@ -40,9 +42,10 @@ const Modal = () => {
 
 
   <div class="space-y-1">
-    <label class="block text-sm font-medium text-white/60">Subject <span class="text-red-400">*</span></label>
+    <label class="block text-start text-sm font-medium text-white/60">Subject <span class="text-red-400">*</span></label>
     <div class="relative">
       <input 
+      required
         name="subject" 
         placeholder="Subject" 
         class="w-full px-4 py-3 bg-white/5 rounded-lg border border-white/10 text-white/90 placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-white/20 transition-all duration-200 hover:border-white/20"
@@ -56,9 +59,10 @@ const Modal = () => {
 
 
   <div class="space-y-1">
-    <label class="block text-sm font-medium text-white/60">Project Details <span class="text-red-400">*</span></label>
+    <label class="block text-start  text-sm font-medium text-white/60">Project Details <span class="text-red-400">*</span></label>
     <div class="relative">
       <textarea 
+      required
         name="message" 
         rows="5" 
         placeholder="Describe your project..." 

@@ -5,7 +5,7 @@ const About = () => {
     <div>
       <div
         id="about"
-        className="w-full py-28 relative overflow-hidden bg-gradient-to-br from-[#0a0e1a] via-[#0f172a] to-[#1a1030]"
+        className="w-full py-16 md:py-28 relative overflow-hidden bg-gradient-to-br from-[#0a0e1a] via-[#0f172a] to-[#1a1030]"
       >
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-20 right-20 w-40 h-40 rounded-full bg-purple-500 blur-[80px]"></div>
@@ -31,7 +31,7 @@ const About = () => {
                 <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                 <circle cx="12" cy="7" r="4"></circle>
               </svg>
-              <h2 className="text-6xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-blue-400 to-pink-400">
+              <h2 className="text-4xl md:text-8xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-blue-400 to-pink-400">
                 About Me
               </h2>
             </div>
@@ -191,3 +191,12 @@ const About = () => {
 };
 
 export default About;
+
+
+
+
+
+
+
+
+

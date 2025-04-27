@@ -52,7 +52,7 @@ const Navbar = () => {
             <a href="#work" className="cursor-pointer text-[#2563eb]">
               Work
             </a>
-            <a href="#service" className="cursor-pointer text-[#2563eb]">
+            <a href="#services" className="cursor-pointer text-[#2563eb]">
               Service
             </a>
             <a href="#about" className="cursor-pointer text-[#2563eb]">

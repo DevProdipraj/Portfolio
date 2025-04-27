@@ -84,8 +84,41 @@ const Contact = () => {
                 </div>
 
                 <div className="relative">
-                  <div className="  px-4 py-3 w-full bg-white/5 rounded-lg border border-white/10 text-white cursor-pointer flex items-center justify-between">
-                    <span className="text-gray-400">Select a subject</span>
+                  <select required
+                    className="block appearance-none px-4 py-3 w-full bg-white/5 rounded-lg border border-white/10 text-white cursor-pointer focus:outline-none focus:ring-1 focus:ring-purple-400"
+                    defaultValue=""
+                  >
+                    <option value="" disabled className="text-gray-400">
+                      Select a subject
+                    </option>
+                    <option className="bg-[#0f172a] text-white" value="hire">
+                      Hire Prodip for a project
+                    </option>
+                    <option className="bg-[#0f172a] text-white" value="help">
+                      Need help with a development question
+                    </option>
+                    <option
+                      className="bg-[#0f172a] text-white"
+                      value="collaborate"
+                    >
+                      Want to collaborate
+                    </option>
+                    <option
+                      className="bg-[#0f172a] text-white"
+                      value="feedback"
+                    >
+                      Feedback about portfolio
+                    </option>
+                    <option className="bg-[#0f172a] text-white" value="job">
+                      Job opportunity
+                    </option>
+                    <option className="bg-[#0f172a] text-white" value="other">
+                      Other (please specify)
+                    </option>
+                  </select>
+ 
+
+                  <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center px-2 text-white">
                     <svg
                       stroke="currentColor"
                       fill="none"
@@ -93,17 +126,12 @@ const Contact = () => {
                       viewBox="0 0 24 24"
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className="transition-transform"
-                      height="1em"
-                      width="1em"
+                      className="h-4 w-4"
                       xmlns="http://www.w3.org/2000/svg"
                     >
                       <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                   </div>
-                  <label className="absolute left-4 -top-3 px-1 text-sm text-gray-300">
-                    Subject <span className="text-purple-400">*</span>
-                  </label>
                 </div>
 
                 <div className="relative">
@@ -111,7 +139,7 @@ const Contact = () => {
                     id="message"
                     className="block px-4 py-3 w-full min-h-[150px] bg-white/5 rounded-lg border border-white/10 text-white placeholder-transparent peer focus:outline-none focus:ring-1 focus:ring-purple-500/50"
                     placeholder=" "
-                    required
+                     
                   ></textarea>
                   <label
                     htmlFor="message"
@@ -192,13 +220,13 @@ const Contact = () => {
                         <polyline points="22,6 12,13 2,6"></polyline>
                       </svg>
                     </div>
-                    <span>prodip.dev@gmail.com</span>
+                    <span>prodip.code@gmail.com</span>
                   </a>
 
                   <a
-                    target="_blank"
+                     
                     className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group"
-                    href="https://github.com/prodiprajbongshi"
+                   
                   >
                     <div className="w-10 h-10 rounded-full bg-gradient-to-r from-gray-600 to-gray-800 flex items-center justify-center group-hover:rotate-12 transition-transform">
                       <svg
@@ -215,7 +243,7 @@ const Contact = () => {
                         <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                       </svg>
                     </div>
-                    <span>github.com/prodiprajbongshi</span>
+                    <a target="_blank" href="https://github.com/DevProdipraj/">Github</a>
                   </a>
 
                   <a
@@ -240,7 +268,7 @@ const Contact = () => {
                         <circle cx="4" cy="4" r="2"></circle>
                       </svg>
                     </div>
-                    <span>linkedin.com/in/rajbongshiprodip</span>
+                    <a target="_blank" href="https://www.linkedin.com/in/prodip-raj-a50818282/">Linkedin</a>
                   </a>
                 </div>
               </div>

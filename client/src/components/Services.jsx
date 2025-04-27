@@ -9,7 +9,7 @@ import {
 
 const Services = () => {
   return (
-    <div className="bg-[#0f172a]    py-12 px-4 sm:px-6 lg:px-8">
+    <div id="services" className="bg-[#0f172a]    py-12 px-4 sm:px-6 lg:px-8">
        {/* services title  */}
        <div className="mb-20 overflow-hidden">
           <h1
@@ -49,8 +49,7 @@ const Services = () => {
           </div>
           <h3 className="text-xl font-bold mb-2">Web Development</h3>
           <p className="text-sm text-gray-300">
-            Custom, responsive websites built with modern technologies like
-            Next.js, React, and TypeScript.
+          Crafting high-performance, scalable websites using modern technologies like Next.js, React, Node.js, and MongoDB, with a strong focus on responsiveness, security, and best practices.
           </p>
         </div>
 
@@ -59,10 +58,9 @@ const Services = () => {
           <div className="bg-cyan-500 p-3 inline-block rounded-lg mb-4">
             <FaPalette className="text-2xl" />
           </div>
-          <h3 className="text-xl font-bold mb-2">UI/UX Design</h3>
+          <h3 className="text-xl font-bold mb-2">Web Design</h3>
           <p className="text-sm text-gray-300">
-            Beautiful, intuitive interfaces designed with user experience as the
-            top priority.
+          Designing sleek, user-centric interfaces with technologies like HTML5, CSS3, Tailwind CSS, and Figma, ensuring seamless user experience, accessibility, and modern aesthetics.
           </p>
         </div>
 
@@ -105,7 +103,7 @@ const Services = () => {
           <div className="bg-purple-500 p-3 inline-block rounded-lg mb-4">
             <FaUserTie className="text-2xl" />
           </div>
-          <h3 className="text-xl font-bold mb-2">Consulting</h3>
+          <h3 className="text-xl font-bold mb-2">Web Hosting</h3>
           <p className="text-sm text-gray-300">
             Expert advice on architecture, performance optimization, and best
             practices.

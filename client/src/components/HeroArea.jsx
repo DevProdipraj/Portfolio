@@ -1,13 +1,41 @@
-import React from "react";
+import React, { useRef } from "react";
 import { LuDownload } from "react-icons/lu";
 import Modal from "./Modal";
-
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 const HeroArea = () => {
+
+  let timeLine = gsap.timeline();
+  const heroInfo = useRef();
+  const heroImage = useRef();
+  
+  useGSAP(() => {
+    // Animation for heroInfo
+    timeLine.from(heroInfo.current, {
+      y: 30,
+      duration: 0.5,
+      opacity: 0,
+      delay: 0.5,
+    });
+  
+    // Animation for heroImage
+    timeLine.from(heroImage.current, {
+      x: 10,
+      duration: 0.5,
+      opacity: 0,
+      delay: 0.5,
+    });
+  });
+  
+
+
+
+
 
   return (
     <div className="container px-4 sm:px-6 pb-10 lg:pb-32 lg:px-38 flex flex-col-reverse lg:flex-row items-center lg:items-start justify-between gap-y-12 lg:gap-x-10 py-22 md:pt-52">
       {/* Left Text Section */}
-      <div className="w-full lg:w-3/5 text-center lg:text-left">
+      <div ref={heroInfo} className="w-full lg:w-3/5 text-center lg:text-left">
         <h3 className="text-base sm:text-lg font-medium text-purple-400">
           Web Developer (MERN) || Bridging Frontend Beauty with Backend Power
         </h3>
@@ -67,7 +95,7 @@ const HeroArea = () => {
       </div>
 
       {/* Right Image Section */}
-      <div className="w-full sm:w-4/5 lg:w-2/5 max-w-md mx-auto lg:mx-0">
+      <div ref={heroImage} className="w-full sm:w-4/5 lg:w-2/5 max-w-md mx-auto lg:mx-0">
         <div className="relative flex items-center justify-center bg-[#1C2232] rounded-xl cursor-pointer hover:shadow-2xl transition-all duration-300">
           <img
             src="/ProdipRajbongshi.png"

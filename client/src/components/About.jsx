@@ -1,6 +1,125 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);  
+gsap.registerPlugin(useGSAP); 
 
 const About = () => {
+
+
+let timeLine = gsap.timeline();
+const sectionHeader = useRef();
+const aboutInfo = useRef();
+const devlopmentCard = useRef();
+const toolsCard = useRef();
+const experianceCard = useRef();
+const resumeBtn = useRef();
+
+useGSAP(() => {
+  timeLine.from(sectionHeader.current, {
+    y: 30,
+    duration: 0.5,
+    opacity: 0,
+    delay: 0.5,
+    scrollTrigger: {
+      trigger: sectionHeader.current,
+      scroller: "body",
+      // markers: true,
+      start: "top 30%",
+      end: "top 30%",
+      scrub : 2,
+    }
+  });
+  timeLine.from(aboutInfo.current, {
+    y: 60,
+    duration: 0.5,
+    opacity: 0,
+    delay: 2,
+    scrollTrigger: {
+      trigger: sectionHeader.current,
+      scroller: "body",
+      // markers: true,
+      start: "top 30%",
+      end: "top 30%",
+      scrub : 2,
+    }
+  });
+  timeLine.from(devlopmentCard.current, {
+    x: -200,
+    duration: 0.5,
+    opacity: 0,
+    delay: 4,
+    scrollTrigger: {
+      trigger: sectionHeader.current,
+      scroller: "body",
+      // markers: true,
+      start: "top 0%",
+      end: "top 0%",
+      scrub : 2,
+    }
+  });
+  timeLine.from(toolsCard.current, {
+    x: -400,
+    duration: 0.5,
+    opacity: 0,
+    delay: 6,
+    scrollTrigger: {
+      trigger: sectionHeader.current,
+      scroller: "body",
+      // markers: true,
+      start: "top 0%",
+      end: "top 0%",
+      scrub : 2,
+    }
+  });
+  timeLine.from(experianceCard.current, {
+    x: -600,
+    duration: 0.5,
+    opacity: 0,
+    delay: 8,
+    scrollTrigger: {
+      trigger: sectionHeader.current,
+      scroller: "body",
+      // markers: true,
+      start: "top 0%",
+      end: "top 0%",
+      scrub : 2,
+    }
+  });
+  timeLine.from(resumeBtn.current, {
+    y: 60,
+    duration: 2,
+    opacity: 0,
+    delay: 10,
+    scrollTrigger: {
+      trigger: sectionHeader.current,
+      scroller: "body",
+      // markers: true,
+      start: "top -50%",
+      end: "top -50%",
+      scrub : 2,
+    }
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   return (
     <div>
       <div
@@ -14,7 +133,7 @@ const About = () => {
         </div>
 
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
-          <div className="about-item mb-16 text-center">
+          <div ref={sectionHeader} className="  mb-16 text-center">
             <div className="inline-flex items-center gap-3 mb-6">
               <svg
                 stroke="currentColor"
@@ -38,7 +157,7 @@ const About = () => {
             <div className="title-divider mx-auto w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full"></div>
           </div>
 
-          <div className="about-item mb-20 max-w-4xl mx-auto text-center">
+          <div ref={aboutInfo} className=" mb-20 max-w-4xl mx-auto text-center">
             <p className="text-xl md:text-2xl text-gray-300 leading-relaxed">
               Hello! I'm <span className="text-purple-300 font-medium">Prodip Rajbongshi</span>, a passionate{' '}
               <span className="text-blue-300 font-medium">Full-Stack Developer</span>{' '}
@@ -49,7 +168,7 @@ const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
             {/* Development Card */}
-            <div className="about-item skill-card bg-gradient-to-br from-[#1e1b4b]/50 to-[#0f172a]/80 backdrop-blur-lg p-8 rounded-2xl border border-white/10 hover:border-purple-400/50 transition-all hover:-translate-y-2 shadow-lg shadow-purple-500/10">
+            <div ref={devlopmentCard} className="   bg-gradient-to-br from-[#1e1b4b]/50 to-[#0f172a]/80 backdrop-blur-lg p-8 rounded-2xl border border-white/10 hover:border-purple-400/50 transition-all hover:-translate-y-2 shadow-lg shadow-purple-500/10">
               <div className="flex items-center gap-4 mb-6">
                 <div className="p-3 rounded-lg bg-purple-500/10">
                   <svg
@@ -81,7 +200,7 @@ const About = () => {
             </div>
 
             {/* Design & Tools Card */}
-            <div className="about-item skill-card bg-gradient-to-br from-[#1e3a8a]/50 to-[#0f172a]/80 backdrop-blur-lg p-8 rounded-2xl border border-white/10 hover:border-blue-400/50 transition-all hover:-translate-y-2 shadow-lg shadow-blue-500/10">
+            <div ref={toolsCard} className=" bg-gradient-to-br from-[#1e3a8a]/50 to-[#0f172a]/80 backdrop-blur-lg p-8 rounded-2xl border border-white/10 hover:border-blue-400/50 transition-all hover:-translate-y-2 shadow-lg shadow-blue-500/10">
               <div className="flex items-center gap-4 mb-6">
                 <div className="p-3 rounded-lg bg-blue-500/10">
                   <svg
@@ -121,7 +240,7 @@ const About = () => {
             </div>
 
             {/* Experience Card */}
-            <div className="about-item skill-card bg-gradient-to-br from-[#831843]/50 to-[#0f172a]/80 backdrop-blur-lg p-8 rounded-2xl border border-white/10 hover:border-pink-400/50 transition-all hover:-translate-y-2 shadow-lg shadow-pink-500/10">
+            <div ref={experianceCard} className="  bg-gradient-to-br from-[#831843]/50 to-[#0f172a]/80 backdrop-blur-lg p-8 rounded-2xl border border-white/10 hover:border-pink-400/50 transition-all hover:-translate-y-2 shadow-lg shadow-pink-500/10">
               <div className="flex items-center gap-4 mb-6">
                 <div className="p-3 rounded-lg bg-pink-500/10">
                   <svg
@@ -159,7 +278,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="about-item text-center">
+          <div ref={resumeBtn} className="  text-center">
             <a
               href="https://drive.google.com/file/d/1tHRJDr5mr2SrHg2MnoBFiv7uMkQitTOf/view?usp=sharing"
               target="_blank"
@@ -191,12 +310,3 @@ const About = () => {
 };
 
 export default About;
-
-
-
-
-
-
-
-
-

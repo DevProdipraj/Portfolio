@@ -4,33 +4,27 @@ import Modal from "./Modal";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 const HeroArea = () => {
-
   let timeLine = gsap.timeline();
   const heroInfo = useRef();
   const heroImage = useRef();
-  
+
   useGSAP(() => {
+    // Animation for heroImage
+    timeLine.from(heroImage.current, {
+      x: 100,
+      duration: 0.3,
+      opacity: 0,
+      delay: 0.3,
+    });
+
     // Animation for heroInfo
     timeLine.from(heroInfo.current, {
       y: 30,
-      duration: 0.5,
+      duration: 0.2,
       opacity: 0,
-      delay: 0.5,
-    });
-  
-    // Animation for heroImage
-    timeLine.from(heroImage.current, {
-      x: 10,
-      duration: 0.5,
-      opacity: 0,
-      delay: 0.5,
+      delay: 0.2,
     });
   });
-  
-
-
-
-
 
   return (
     <div className="container px-4 sm:px-6 pb-10 lg:pb-32 lg:px-38 flex flex-col-reverse lg:flex-row items-center lg:items-start justify-between gap-y-12 lg:gap-x-10 py-22 md:pt-52">
@@ -75,8 +69,6 @@ const HeroArea = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-x-6">
-
-
           <Modal />
           <a
             href="https://drive.google.com/file/d/1tHRJDr5mr2SrHg2MnoBFiv7uMkQitTOf/view"
@@ -95,7 +87,10 @@ const HeroArea = () => {
       </div>
 
       {/* Right Image Section */}
-      <div ref={heroImage} className="w-full sm:w-4/5 lg:w-2/5 max-w-md mx-auto lg:mx-0">
+      <div
+        ref={heroImage}
+        className="w-full sm:w-4/5 lg:w-2/5 max-w-md mx-auto lg:mx-0"
+      >
         <div className="relative flex items-center justify-center bg-[#1C2232] rounded-xl cursor-pointer hover:shadow-2xl transition-all duration-300">
           <img
             src="/ProdipRajbongshi.png"

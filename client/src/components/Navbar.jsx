@@ -13,14 +13,14 @@ const Navbar = () => {
  
     timeLine.from(logo.current, {
       y: -20,
-      duration: 0.3,
+      duration: 0.2,
       opacity: 0,
       delay: 0.5,
     });
 
     timeLine.from(navLinks.current.querySelectorAll("a"), {
       y: -20,
-      duration: 0.5,
+      duration: 0.3,
       opacity: 0,
       stagger: 0.2, 
     });

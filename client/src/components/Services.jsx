@@ -1,3 +1,11 @@
+import React, { useRef }  from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP);
+
+
 import {
   FaCode,
   FaPalette,
@@ -8,40 +16,84 @@ import {
 } from "react-icons/fa";
 
 const Services = () => {
+
+
+
+  let timeLine = gsap.timeline();
+  const sectionHeader = useRef()
+  const servicesCards = useRef()
+ useGSAP(()=> {
+  timeLine.from(sectionHeader.current.querySelectorAll("span"), {
+    y: 100,
+    opacity: 0,
+    duration: 0.5,
+    stagger: 0.1,
+    delay: 0.5,
+    scrollTrigger: {
+      trigger: sectionHeader.current,
+      scroller: "body",
+      start: "top 50%",
+      end: "top 50%",
+      scrub: 2,
+    },
+    
+  });
+  timeLine.from(servicesCards.current.querySelectorAll("div"), {
+    y: 100,
+    opacity: 0,
+    duration: 2,
+    stagger: 0.1,
+    delay: 0.5,
+    scrollTrigger: {
+      trigger: servicesCards.current,
+      scroller: "body",
+      // markers: true,
+      start: "top 20%",
+      end: "top 20%",
+      scrub: 2,
+    },
+    
+  });
+
+
+ });
+
+
+
+
   return (
-    <div id="services" className="bg-[#0f172a]    py-12 px-4 sm:px-6 lg:px-8">
-       {/* services title  */}
+    <div id="services" className="bg-gradient-to-br from-[#0a0e1a] via-[#0f172a] to-[#1e1030]   py-12 lg:py-36 px-4 sm:px-6 lg:px-8 overflow-y-hidden ">
+       {/* services title  */} 
        <div className="mb-20 overflow-hidden">
-          <h1
-            className="section-title text-6xl md:text-8xl font-bold tracking-tight text-center"
-            style={{
-              translate: "none",
-              rotate: "none",
-              scale: "none",
-              transform: "translate(0px, 0px)",
-              opacity: 1,
-            }}
+          <h1 ref={sectionHeader}
+            className=" text-center "
+            
           >
-            {"SERVICES".split("").map((letter, index) => (
-              <span
-                key={index}
-                className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400"
-                style={{
-                  translate: "none",
-                  rotate: "none",
-                  scale: "none",
-                  transform: "translate(0px, 0px)",
-                  opacity: 1,
-                }}
-              >
-                {letter}
+            <span className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400 work-title text-4xl md:text-8xl font-bold tracking-tight">
+                S
               </span>
-            ))}
+              <span className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400 work-title text-4xl md:text-8xl font-bold tracking-tight">
+                E
+              </span>
+              <span className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400 work-title text-4xl md:text-8xl font-bold tracking-tight">
+                R
+              </span>
+              <span className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400 work-title text-4xl md:text-8xl font-bold tracking-tight">
+                V
+              </span>
+              <span className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400 work-title text-4xl md:text-8xl font-bold tracking-tight">
+                I
+              </span>
+              <span className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400 work-title text-4xl md:text-8xl font-bold tracking-tight">
+                C
+              </span>
+              <span className="inline-block bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400 work-title text-4xl md:text-8xl font-bold tracking-tight">
+                E
+              </span>
           </h1>
           <div className="title-divider mx-auto w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mt-6"></div>
         </div>
-      <div className="container lg:px-26 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-       
+      <div ref={servicesCards} className="container lg:px-26 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {/* Web Development */}
         <div className="bg-gradient-to-br from-[#1e1e9e] to-[#0f172a] rounded-2xl px-8 py-10 border border-white/10 text-white shadow-md">
           <div className="bg-purple-600 p-3 inline-block rounded-lg mb-4">

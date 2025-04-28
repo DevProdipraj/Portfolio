@@ -1,13 +1,56 @@
 import React from "react";
+import { useRef }  from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP);
 
 const WorkProcess = () => {
+
+
+
+
+  let timeLine = gsap.timeline();
+  const workProcessCards = useRef()
+
+ useGSAP(()=> {
+  // timeLine.from(workProcessCards.current.querySelectorAll("div"), {
+  //   y: 100,
+  //   opacity: 0,
+  //   duration: 0.5,
+  //   stagger: 0.1,
+  //   delay: 0.5,
+  //   scrollTrigger: {
+  //     trigger: workProcessCards.current,
+  //     scroller: "body",
+  //     markers: true,
+  //     start: "top 20%",
+  //     end: "top 20%",
+  //     scrub: 2,
+  //   },
+    
+  // });
+  
+
+ });
+
+
+
+
+
+
+
+
+
+
   return (
     <div className="container lg:px-20">
     <div className="px-4 sm:px-6 lg:px-20 xl:px-40 py-10">
       <h2 className="text-3xl sm:text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-blue-400">
         My Working Process
       </h2>
-      <div className="relative">
+      <div   className="relative">
         {/* Vertical timeline line */}
         <div className="absolute left-5 sm:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-500 to-blue-500 rounded-full transform sm:-translate-x-1/2"></div>
 

@@ -1,6 +1,62 @@
-import React from "react";
+import React, { useRef } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP);
 
 const Contact = () => {
+  let timeLine = gsap.timeline();
+  const sectionHeader = useRef();
+  const contactForm = useRef();
+  const footer = useRef();
+
+  useGSAP(() => {
+    timeLine.from(sectionHeader.current.querySelectorAll("span"), {
+      y: 100,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.1,
+      delay: 0.5,
+      scrollTrigger: {
+        trigger: sectionHeader.current,
+        scroller: "body",
+        start: "top 50%",
+        end: "top 50%",
+        scrub: 2,
+      },
+    });
+    timeLine.from(contactForm.current , {
+      x: -200,
+      opacity: 0,
+      duration: 0.5,
+      delay: 0.5,
+      scrollTrigger: {
+        trigger: contactForm.current,
+        scroller: "body",
+        start: "top 30%",
+        end: "top 30%",
+         
+        scrub: 3,
+      },
+    });
+    timeLine.from(footer.current , {
+      y: 50,
+      opacity: 0,
+      duration: 0.5,
+      delay: 0.5,
+      scrollTrigger: {
+        trigger: footer.current,
+        scroller: "body",
+        start: "top 100%",
+        end: "top 100%",
+    
+        scrub: 3,
+      },
+    });
+   
+  });
+
   return (
     <div
       id="contact"
@@ -20,6 +76,7 @@ const Contact = () => {
           {/* Section title  */}
           <div className="mb-6 md:mb-20 overflow-hidden">
             <h1
+              ref={sectionHeader}
               className="section-title text-4xl md:text-8xl font-bold tracking-tight text-center"
               style={{
                 translate: "none",
@@ -48,8 +105,8 @@ const Contact = () => {
             <div className="title-divider mx-auto w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mt-6"></div>
           </div>
 
-          <div className="contact-container grid grid-cols-1 lg:grid-cols-2  gap-12">
-            <form className="contact-form bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-lg p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300">
+          <div ref={contactForm}  className="contact-container grid grid-cols-1 lg:grid-cols-2  gap-12">
+            <form   className="contact-form bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-lg p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300">
               <div className="space-y-6">
                 <div className="relative">
                   <input
@@ -84,7 +141,8 @@ const Contact = () => {
                 </div>
 
                 <div className="relative">
-                  <select required
+                  <select
+                    required
                     className="block appearance-none px-4 py-3 w-full bg-white/5 rounded-lg border border-white/10 text-white cursor-pointer focus:outline-none focus:ring-1 focus:ring-purple-400"
                     defaultValue=""
                   >
@@ -116,7 +174,6 @@ const Contact = () => {
                       Other (please specify)
                     </option>
                   </select>
- 
 
                   <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center px-2 text-white">
                     <svg
@@ -139,7 +196,6 @@ const Contact = () => {
                     id="message"
                     className="block px-4 py-3 w-full min-h-[150px] bg-white/5 rounded-lg border border-white/10 text-white placeholder-transparent peer focus:outline-none focus:ring-1 focus:ring-purple-500/50"
                     placeholder=" "
-                     
                   ></textarea>
                   <label
                     htmlFor="message"
@@ -172,7 +228,7 @@ const Contact = () => {
               </div>
             </form>
 
-            <div className="contact-info bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-lg p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300">
+            <div  className="contact-info bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-lg p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300">
               <div className="h-full flex flex-col justify-between">
                 <div>
                   <h2 className="text-3xl font-bold text-white mb-6">
@@ -223,10 +279,10 @@ const Contact = () => {
                     <span>prodip.code@gmail.com</span>
                   </a>
 
-                  <a target="_blank" href="https://github.com/DevProdipraj/"
-                     
+                  <a
+                    target="_blank"
+                    href="https://github.com/DevProdipraj/"
                     className="flex items-center gap-3 text-gray-300 hover:text-white transition-colors group"
-                   
                   >
                     <div className="w-10 h-10 rounded-full bg-gradient-to-r from-gray-600 to-gray-800 flex items-center justify-center group-hover:rotate-12 transition-transform">
                       <svg
@@ -243,7 +299,7 @@ const Contact = () => {
                         <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                       </svg>
                     </div>
-                    <span >Github</span>
+                    <span>Github</span>
                   </a>
 
                   <a
@@ -268,7 +324,7 @@ const Contact = () => {
                         <circle cx="4" cy="4" r="2"></circle>
                       </svg>
                     </div>
-                    <span >Linkedin</span>
+                    <span>Linkedin</span>
                   </a>
                 </div>
               </div>
@@ -276,7 +332,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
+        <div ref={footer} className="mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
             © 2025{" "}
             <a

@@ -32,8 +32,8 @@ const Services = () => {
     scrollTrigger: {
       trigger: sectionHeader.current,
       scroller: "body",
-      start: "top 50%",
-      end: "top 50%",
+      start: "top 30%",
+      end: "top 30%",
       scrub: 2,
     },
     

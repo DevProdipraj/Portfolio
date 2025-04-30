@@ -56,6 +56,7 @@ const project = {
 const Work = () => {
   const sectionHeader = useRef();
   const cardRefs = useRef([]);
+  const gitHubLink = useRef();
 
   useGSAP(() => {
     gsap.from(sectionHeader.current.querySelectorAll("span"), {
@@ -85,6 +86,20 @@ const Work = () => {
           scrub: 2,
         },
       });
+    });
+    gsap.from(gitHubLink.current , {
+      y: 100,
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.1,
+      delay: 0.5,
+      scrollTrigger: {
+        trigger: gitHubLink.current,
+        start: "top 50%",
+        end: "top 50%",
+        // markers: true,
+        scrub: 2,
+      },
     });
   }, []);
 
@@ -170,7 +185,7 @@ const Work = () => {
 
 
           {/* github link */}
-          <div className="">
+          <div ref={gitHubLink} className="">
               <div className="mt-20 lg:mt-40 text-center">
                 <a
                   target="_blank"

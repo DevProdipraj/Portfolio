@@ -18,7 +18,6 @@ document.addEventListener("keydown", function (e) {
 // block dev tools
 setInterval(() => {
   const before = new Date().getTime();
-  debugger;
   const after = new Date().getTime();
   if (after - before > 100) {
     window.location.href = "about:blank";

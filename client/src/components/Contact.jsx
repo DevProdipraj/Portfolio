@@ -332,7 +332,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <div ref={footer} className="mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
+        <div ref={footer} className="pb-6 md:pb-0 mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
             © 2025{" "}
             <a

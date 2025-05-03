@@ -4,11 +4,12 @@ import { SiLinkedin } from "react-icons/si";
 import Modal from "./Modal";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { useNavigate } from "react-router-dom";
 
 const BottomBar = () => {
   const [hiddenBar, setHiddenBar] = useState(false);
 
-
+  const navigate = useNavigate()
 
   let timeLine = gsap.timeline(); 
   const bottomBar = useRef();
@@ -49,14 +50,12 @@ const BottomBar = () => {
           <div className="w-full max-w-[1280px] mx-auto">
             <div className="rounded-xl overflow-hidden shadow-2xl text-center bg-gradient-to-br from-[#0a0e1a] via-[#0f172a] to-[#1e1030] p-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <div className="flex flex-col md:flex-row md:items-center flex-1 gap-4">
-                <div className="hidden lg:block">
-                  <a href="#">
+                <div onClick={() => {navigate("/")}} className="hidden lg:block cursor-pointer">
                     <img
                       className="md:w-52 h-auto mx-auto md:mx-0"
                       src="./Logo.svg"
                       alt="Brand Icon"
                     />
-                  </a>
                 </div>
                 <div className="hidden md:block">
                   <ul className="flex justify-center md:justify-start items-center gap-x-6 text-white lg:ms-5 ">

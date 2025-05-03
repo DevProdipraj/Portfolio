@@ -1,9 +1,13 @@
 import React, { useEffect, useState, useRef } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 import gsap from "gsap";
+import { useNavigate } from "react-router";
 import { useGSAP } from "@gsap/react";
 
 const Navbar = () => {
+
+
+ const navigate =  useNavigate() 
 
   let timeLine = gsap.timeline(); 
   const logo = useRef();
@@ -59,20 +63,18 @@ const Navbar = () => {
     >
       <div  className="bg-[#0a0a1a]/90 backdrop-blur-lg mx-auto max-w-[1280px] px-4 sm:px-6 rounded-xl flex items-center justify-between border border-white/10">
         {/* Logo */}
-        <div ref={logo}>
-          <a href="#">
+        <div className="cursor-pointer" onClick={()=> {navigate("/")}} ref={logo}>
             <img
               className="w-2/3 md:w-3/3 h-2/3"
               src="./Logo.svg"
               alt="Brand Icon"
             />
-          </a>
         </div>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex">
           <ul ref={navLinks} className="flex items-center text-white gap-x-6">
-            <a href="#work" className="cursor-pointer bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent font-bold">
+            <a   href="#work" className="cursor-pointer bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent font-bold">
               Work
             </a>
             <a href="#services" className="cursor-pointer bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent font-bold">

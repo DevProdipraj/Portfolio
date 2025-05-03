@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+import React, { use, useRef } from "react";
+import { useNavigate } from "react-router";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -10,6 +11,8 @@ const Contact = () => {
   const sectionHeader = useRef();
   const contactForm = useRef();
   const footer = useRef();
+
+  const navigate = useNavigate();
 
   useGSAP(() => {
     timeLine.from(sectionHeader.current.querySelectorAll("span"), {
@@ -26,7 +29,7 @@ const Contact = () => {
         scrub: 2,
       },
     });
-    timeLine.from(contactForm.current , {
+    timeLine.from(contactForm.current, {
       x: -200,
       opacity: 0,
       duration: 0.5,
@@ -36,11 +39,11 @@ const Contact = () => {
         scroller: "body",
         start: "top 30%",
         end: "top 30%",
-         
+
         scrub: 3,
       },
     });
-    timeLine.from(footer.current , {
+    timeLine.from(footer.current, {
       y: 50,
       opacity: 0,
       duration: 0.5,
@@ -50,11 +53,10 @@ const Contact = () => {
         scroller: "body",
         start: "top 100%",
         end: "top 100%",
-    
+
         scrub: 3,
       },
     });
-   
   });
 
   return (
@@ -105,8 +107,11 @@ const Contact = () => {
             <div className="title-divider mx-auto w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mt-6"></div>
           </div>
 
-          <div ref={contactForm}  className="contact-container grid grid-cols-1 lg:grid-cols-2  gap-12">
-            <form   className="contact-form bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-lg p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300">
+          <div
+            ref={contactForm}
+            className="contact-container grid grid-cols-1 lg:grid-cols-2  gap-12"
+          >
+            <form className="contact-form bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-lg p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300">
               <div className="space-y-6">
                 <div className="relative">
                   <input
@@ -228,7 +233,7 @@ const Contact = () => {
               </div>
             </form>
 
-            <div  className="contact-info bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-lg p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300">
+            <div className="contact-info bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-lg p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300">
               <div className="h-full flex flex-col justify-between">
                 <div>
                   <h2 className="text-3xl font-bold text-white mb-6">
@@ -332,7 +337,10 @@ const Contact = () => {
           </div>
         </div>
 
-        <div ref={footer} className="pb-6 md:pb-0 mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center">
+        <div
+          ref={footer}
+          className="pb-6  md:pb-18 mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center"
+        >
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
             © 2025{" "}
             <a
@@ -344,19 +352,28 @@ const Contact = () => {
             </a>{" "}
             All rights reserved.
           </div>
-          <div className="flex items-center gap-6">
-            <a
-              className="text-gray-400 hover:text-white transition-colors text-sm"
-              href="/privacy"
+          <div className="flex items-center gap-6 ">
+            <div
+              onClick={() => {
+                navigate("/privacy-policy");
+              }}
+              className="cursor-pointer"
             >
-              Privacy Policy
-            </a>
-            <a
-              className="text-gray-400 hover:text-white transition-colors text-sm"
-              href="/terms"
+              <h4 className="text-gray-400 hover:text-white transition-colors text-sm">
+                Privacy Policy
+              </h4>
+            </div>
+
+            <div
+              onClick={() => {
+                navigate("/terms-conditions");
+              }}
+              className="cursor-pointer"
             >
-              Terms &amp; Conditions
-            </a>
+              <h4 className="text-gray-400 hover:text-white transition-colors text-sm">
+                Terms &amp; Conditions
+              </h4>
+            </div>
           </div>
         </div>
       </div>

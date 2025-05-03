@@ -1,28 +1,22 @@
-import React from 'react'
-import Navbar from './components/Navbar'
-import HeroArea from './components/HeroArea'
-import About from './components/About'
-import Work from './components/Work'
-import Services from './components/Services'
-import WorkProcess from './components/WorkProcess'
-import Contact from './components/Contact'
-import BottomBar from './components/BottomBar'
-// import StartProjectForm from './components/HiremeForm'
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+
+import Home from './pages/Home';
+import TermsConditions from './pages/TermsConditions';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import Work from './components/Work';
 
 const App = () => {
   return (
-    <div className='  '>
-     <Navbar />
-     <BottomBar/>
-     <HeroArea />
-     <About />
-     <Work />
-     {/* <StartProjectForm /> */}
-     <Services />
-     < WorkProcess/>
-     <Contact/>
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/work" element={<Work />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+        <Route path="/terms-conditions" element={<TermsConditions />} />
+      </Routes>
     </div>
-  )
-}
+  );
+};
 
-export default App
+export default App;

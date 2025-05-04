@@ -1,6 +1,5 @@
 import React, { useRef } from "react";
 import { LuDownload } from "react-icons/lu";
-import Modal from "./Modal";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 const HeroArea = () => {
@@ -69,7 +68,28 @@ const HeroArea = () => {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 sm:gap-x-6">
-          <Modal />
+          <a
+            href="#contact"
+            className="w-full sm:w-auto text-white flex items-center gap-2 px-6 py-3.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/30 transition-all"
+            aria-label="Hire Prodip for your project"
+          >
+            <svg
+              stroke="currentColor"
+              fill="none"
+              strokeWidth="2"
+              viewBox="0 0 24 24"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="text-xl"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+            Hire Me
+          </a>
           <a
             href="https://drive.google.com/file/d/1tHRJDr5mr2SrHg2MnoBFiv7uMkQitTOf/view"
             target="_blank"

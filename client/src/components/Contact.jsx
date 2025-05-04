@@ -37,8 +37,8 @@ const Contact = () => {
       scrollTrigger: {
         trigger: contactForm.current,
         scroller: "body",
-        start: "top 30%",
-        end: "top 30%",
+        start: "top 40%",
+        end: "top 40%",
 
         scrub: 3,
       },
@@ -212,7 +212,7 @@ const Contact = () => {
 
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 py-4 rounded-lg font-medium transition-all bg-gradient-to-r from-purple-600 to-blue-600 hover:shadow-lg hover:shadow-purple-500/30"
+                  className="w-full flex items-center justify-center gap-2 py-4 rounded-lg font-medium transition-all bg-gradient-to-r from-purple-600 to-blue-600 hover:shadow-lg hover:shadow-purple-500/30 cursor-pointer"
                 >
                   <svg
                     stroke="currentColor"

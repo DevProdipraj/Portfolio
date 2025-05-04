@@ -1,7 +1,6 @@
 import React, { useRef, useState } from "react";
 import { FaGithub } from "react-icons/fa";
 import { SiLinkedin } from "react-icons/si";
-import Modal from "./Modal";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useNavigate } from "react-router-dom";
@@ -9,28 +8,19 @@ import { useNavigate } from "react-router-dom";
 const BottomBar = () => {
   const [hiddenBar, setHiddenBar] = useState(false);
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
-  let timeLine = gsap.timeline(); 
+  let timeLine = gsap.timeline();
   const bottomBar = useRef();
 
-
   useGSAP(() => {
- 
     timeLine.from(bottomBar.current, {
       y: 100,
       duration: 0.5,
       opacity: 0,
       delay: 0.5,
     });
-
-  
   });
-
-
-
-
-
 
   return (
     <>
@@ -46,16 +36,24 @@ const BottomBar = () => {
       )}
 
       {!hiddenBar && (
-        <div ref={bottomBar} className="lg:block fixed bottom-10 w-full px-4 z-20">
+        <div
+          ref={bottomBar}
+          className="lg:block fixed bottom-10 w-full px-4 z-20"
+        >
           <div className="w-full max-w-[1280px] mx-auto">
             <div className="rounded-xl overflow-hidden shadow-2xl text-center bg-gradient-to-br from-[#0a0e1a] via-[#0f172a] to-[#1e1030] p-4 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
               <div className="flex flex-col md:flex-row md:items-center flex-1 gap-4">
-                <div onClick={() => {navigate("/")}} className="hidden lg:block cursor-pointer">
-                    <img
-                      className="md:w-52 h-auto mx-auto md:mx-0"
-                      src="./Logo.svg"
-                      alt="Brand Icon"
-                    />
+                <div
+                  onClick={() => {
+                    navigate("/");
+                  }}
+                  className="hidden lg:block cursor-pointer"
+                >
+                  <img
+                    className="md:w-52 h-auto mx-auto md:mx-0"
+                    src="./Logo.svg"
+                    alt="Brand Icon"
+                  />
                 </div>
                 <div className="hidden md:block">
                   <ul className="flex justify-center md:justify-start items-center gap-x-6 text-white lg:ms-5 ">
@@ -101,7 +99,36 @@ const BottomBar = () => {
               </div>
 
               <div className="flex justify-center md:justify-end gap-2">
-                <Modal />
+                <a
+                  href="#contact"
+                  className="w-full sm:w-auto text-white flex items-center gap-2 px-6 py-3.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-medium hover:shadow-lg hover:shadow-blue-500/30 transition-all"
+                  aria-label="Hire Prodip for your project"
+                >
+                  <svg
+                    stroke="currentColor"
+                    fill="none"
+                    strokeWidth="2"
+                    viewBox="0 0 24 24"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-xl"
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <rect
+                      x="2"
+                      y="7"
+                      width="20"
+                      height="14"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                  </svg>
+                  Hire Me
+                </a>
+
                 <button
                   onClick={() => setHiddenBar(true)}
                   className="text-gray-400 hover:text-white transition-all p-2 cursor-pointer"

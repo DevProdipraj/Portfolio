@@ -40,6 +40,7 @@ const project = {
     projectImg: project5,
     projectLink: "https://devprodipraj.github.io/techillusionBD/",
     projectRepo: "https://github.com/DevProdipraj/techillusionBD",
+    projectLogo : ""
   },
   project6: {
     projectImg: project6,
@@ -82,8 +83,9 @@ const Work = () => {
         delay: 0.5,
         scrollTrigger: {
           trigger: ref,
-          start: "top 50%",
+          start: "top 90%",
           scrub: 2,
+          // markers : true
         },
       });
     });
@@ -239,7 +241,7 @@ const renderProjectCard = (projectItem, title, description) => (
               </p>
               <div className="hidden md:block">
                 <div className="flex flex-wrap gap-2 mt-4">
-                  {["Finance", "UI/UX", "React", "Frontend"].map((tag, idx) => (
+                  {["E-Commerce", "UI/UX", "React", "Frontend"].map((tag, idx) => (
                     <span
                       key={idx}
                       className="px-3 py-1 text-sm rounded-full bg-white/5 text-gray-300 border border-white/10"
@@ -261,9 +263,10 @@ const renderProjectCard = (projectItem, title, description) => (
               </a>
             </div>
           </div>
+          {/* mobile card  */}
           <div className="md:hidden mt-4">
             <div className="flex flex-wrap gap-2">
-              {["Finance", "UI/UX", "React", "Frontend"].map((tag, idx) => (
+              {["E-Commerce", "UI/UX", "React", "Frontend"].map((tag, idx) => (
                 <span
                   key={idx}
                   className="px-3 py-1 text-sm rounded-full bg-white/5 text-gray-300 border border-white/10"

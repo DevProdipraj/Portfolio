@@ -47,11 +47,14 @@ const HeroArea = () => {
 
         <div className="flex flex-wrap gap-3 justify-center lg:justify-start my-10">
           {[
+            "HTML-5",
+            "CSS-3",
             "Next.js",
             "Javascript",
             "React.js",
             "Node.js",
             "Tailwind",
+            "GSAP",
             "Bootstrap",
             "Express.js",
             "MongoDB",

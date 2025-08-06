@@ -13,9 +13,9 @@ const PrivacyInfo = () => {
               1. Introduction
             </h2>
             <p className="text-gray-300">
-              This Privacy Policy explains how ShariarDev ("we," "us," or "our")
+              This Privacy Policy explains how Prodip Rajbogshi ("we," "us," or "our")
               collects, uses, and protects any information you provide when
-              using shariardev website. By using this website, you agree to the
+              using Prodip rajbongshi website. By using this website, you agree to the
               terms of this Privacy Policy.
             </p>
           </section>
@@ -108,3 +108,5 @@ const PrivacyInfo = () => {
 };
 
 export default PrivacyInfo;
+
+

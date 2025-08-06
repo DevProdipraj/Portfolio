@@ -12,7 +12,7 @@ const ConditionInfo = () => {
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-white mb-4">1. Acceptance of Terms</h2>
             <p className="text-gray-300">
-              By accessing and using ShariarDev, you agree to comply with these Terms &amp; Conditions. If you do not agree, please do not use the website.
+              By accessing and using Prodip Rajbongshi, you agree to comply with these Terms &amp; Conditions. If you do not agree, please do not use the website.
             </p>
           </section>
 

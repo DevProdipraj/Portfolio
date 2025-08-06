@@ -32,8 +32,8 @@ const Services = () => {
     scrollTrigger: {
       trigger: sectionHeader.current,
       scroller: "body",
-      start: "top 30%",
-      end: "top 30%",
+      start: "top 40%",
+      end: "top 40%",
       scrub: 2,
     },
     
@@ -48,8 +48,8 @@ const Services = () => {
       trigger: servicesCards.current,
       scroller: "body",
       // markers: true,
-      start: "top 20%",
-      end: "top 20%",
+      start: "top 40%",
+      end: "top 40%",
       scrub: 2,
     },
     

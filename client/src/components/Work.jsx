@@ -11,6 +11,7 @@ import project4 from "../assets/projects/surbojuya.png";
 import project5 from "../assets/projects/techIllution.png";
 import project6 from "../assets/projects/waetherApp.png";
 import project7 from "../assets/projects/watermarkPr.png";
+import project8 from "../assets/projects/nestify.png";
 
 const project = [
   {
@@ -54,6 +55,12 @@ const project = [
     projectLink: "https://devprodipraj.github.io/WatermarkPR/",
     projectRepo: "https://github.com/DevProdipraj/WatermarkPR",
     tag: ["Agency", "Web Design", "HTML5", "Bootstrap"],
+  },
+  {
+    projectImg: project8,
+    projectLink: "https://nestify-umber.vercel.app",
+    projectRepo: "https://github.com/DevProdipraj/Portfolio",
+    tag: ["Furniture", "Frontend Development", "Next-js", "Tailwind-CSS"],
   },
 ];
 

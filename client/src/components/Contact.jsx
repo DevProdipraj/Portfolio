@@ -1,7 +1,9 @@
-import React, { use, useRef } from "react";
+import React, { useRef } from "react";
 import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import axios from "axios";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 gsap.registerPlugin(useGSAP);
@@ -11,6 +13,12 @@ const Contact = () => {
   const sectionHeader = useRef();
   const contactForm = useRef();
   const footer = useRef();
+
+  // access user data
+  const nameRef = useRef();
+  const emailRef = useRef();
+  const subjectRef = useRef();
+  const messageRef = useRef();
 
   const navigate = useNavigate();
 
@@ -58,6 +66,39 @@ const Contact = () => {
       },
     });
   });
+
+  const handleForm = async (e) => {
+    e.preventDefault();
+
+    const userInfo = {
+      access_key: "85a799e5-6c3c-4cfc-8764-4ec9124c769e",
+      Name: nameRef.current.value,
+      Email: emailRef.current.value,
+      Subject: subjectRef.current.value,
+      Message: messageRef.current.value,
+    };
+
+    try {
+      const resp = await axios.post(
+        "https://api.web3forms.com/submit",
+        userInfo
+      );
+      if (resp.data.success || resp.status === 200) {
+        toast.success("Email sent successfully!");
+        nameRef.current.value = "";
+        emailRef.current.value = "";
+        subjectRef.current.value = "";
+        messageRef.current.value = "";
+      } else {
+        toast.error(
+          "Sending failed: " + (resp.data.message || resp.statusText)
+        );
+      }
+    } catch (err) {
+      toast.error("An error occurred. Please try again.");
+      console.error("Web3Forms error:", err);
+    }
+  };
 
   return (
     <div
@@ -107,18 +148,24 @@ const Contact = () => {
             <div className="title-divider mx-auto w-24 h-1 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mt-6"></div>
           </div>
 
+          {/* contact form  */}
           <div
             ref={contactForm}
             className="contact-container grid grid-cols-1 lg:grid-cols-2  gap-12"
           >
-            <form className="contact-form bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-lg p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300">
+            <form
+              onSubmit={handleForm}
+              className="contact-form bg-gradient-to-br from-white/5 to-white/3 backdrop-blur-lg p-8 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300"
+            >
               <div className="space-y-6">
+                {/* Name */}
                 <div className="relative">
                   <input
+                    ref={nameRef}
                     type="text"
                     id="name"
                     className="block px-4 py-3 w-full bg-white/5 rounded-lg border border-white/10 text-white placeholder-transparent peer focus:outline-none focus:ring-1 focus:ring-purple-500/50"
-                    placeholder=" "
+                    placeholder=""
                     required
                   />
                   <label
@@ -128,9 +175,10 @@ const Contact = () => {
                     Your Name <span className="text-purple-400">*</span>
                   </label>
                 </div>
-
+                {/* Email */}
                 <div className="relative">
                   <input
+                    ref={emailRef}
                     type="email"
                     id="email"
                     className="block px-4 py-3 w-full bg-white/5 rounded-lg border border-white/10 text-white placeholder-transparent peer focus:outline-none focus:ring-1 focus:ring-purple-500/50"
@@ -144,9 +192,10 @@ const Contact = () => {
                     Your Email <span className="text-purple-400">*</span>
                   </label>
                 </div>
-
+                {/* Subject */}
                 <div className="relative">
                   <select
+                    ref={subjectRef}
                     required
                     className="block appearance-none px-4 py-3 w-full bg-white/5 rounded-lg border border-white/10 text-white cursor-pointer focus:outline-none focus:ring-1 focus:ring-purple-400"
                     defaultValue=""
@@ -179,29 +228,29 @@ const Contact = () => {
                       Other (please specify)
                     </option>
                   </select>
-
                   <div className="pointer-events-none absolute inset-y-0 right-4 flex items-center px-2 text-white">
                     <svg
-                      stroke="currentColor"
+                      /* chevron icon */ stroke="currentColor"
                       fill="none"
                       strokeWidth="2"
                       viewBox="0 0 24 24"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       className="h-4 w-4"
-                      xmlns="http://www.w3.org/2000/svg"
                     >
                       <polyline points="6 9 12 15 18 9"></polyline>
                     </svg>
                   </div>
                 </div>
-
+                {/* Message */}
                 <div className="relative">
                   <textarea
+                    ref={messageRef}
                     id="message"
                     className="block px-4 py-3 w-full min-h-[150px] bg-white/5 rounded-lg border border-white/10 text-white placeholder-transparent peer focus:outline-none focus:ring-1 focus:ring-purple-500/50"
                     placeholder=" "
-                  ></textarea>
+                    required
+                  />
                   <label
                     htmlFor="message"
                     className="absolute left-4 -top-3 px-1 text-sm text-gray-300 transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-placeholder-shown:top-3 peer-focus:-top-3 peer-focus:text-sm peer-focus:text-gray-300"
@@ -209,7 +258,7 @@ const Contact = () => {
                     Your Message <span className="text-purple-400">*</span>
                   </label>
                 </div>
-
+                {/* Button */}
                 <button
                   type="submit"
                   className="w-full flex items-center justify-center gap-2 py-4 rounded-lg font-medium transition-all bg-gradient-to-r from-purple-600 to-blue-600 hover:shadow-lg hover:shadow-purple-500/30 cursor-pointer"
@@ -223,7 +272,6 @@ const Contact = () => {
                     strokeLinejoin="round"
                     height="1em"
                     width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
                   >
                     <line x1="22" y1="2" x2="11" y2="13"></line>
                     <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
